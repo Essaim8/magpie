@@ -18,7 +18,7 @@ import (
 // (zod's toJSONSchema leaves the type off), on the root or a nested field,
 // and magpie's Mirasim provider answered "Mirasim: The request was rejected
 // as invalid." for mirasim/gemini-4-argon through Codex, though the same
-// model took the same tools from clients that carried their own (#2137).
+// model took the same tools from clients that carried their own (#2179).
 // The type is written into every object that names none, and nothing else
 // changes.
 func TestToolObjectTypesWritten(t *testing.T) {
@@ -101,7 +101,7 @@ func TestToolObjectTypesWritten(t *testing.T) {
 // Codex desktop's codex_app tools, as magpie sends them on, carry a type on
 // every object in their parameters, the root's and each nested one's: a
 // relay serving tools without one had its whole turn turned away
-// ("Mirasim: The request was rejected as invalid.", #2137). The check is
+// ("Mirasim: The request was rejected as invalid.", #2179). The check is
 // the body the upstream received, so it fails when the fix isn't wired into
 // the send path.
 func TestToolObjectsTypedOnTheWire(t *testing.T) {

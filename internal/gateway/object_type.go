@@ -13,7 +13,7 @@ import (
 // though the tool is never called. Codex desktop's codex_app tools carry
 // such schemas — zod's toJSONSchema leaves a z.object's properties and
 // required without a type, at the root or on a nested field — and a relay
-// in front of a strict model passes the refusal on (#2137: magpie's
+// in front of a strict model passes the refusal on (#2179: magpie's
 // Mirasim provider answering "Mirasim: The request was rejected as
 // invalid." for mirasim/gemini-4-argon through Codex, while the same model
 // took the same tools in clients that carried their own).

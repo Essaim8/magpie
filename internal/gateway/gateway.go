@@ -3350,7 +3350,7 @@ func (s *Server) forwardOnce(ctx context.Context, p provider.Provider, to provid
 	body = kimiToolEnumTypes(p, to, body)
 	// a tool whose parameters declare properties or required but name no
 	// type, which a strict upstream turns the whole request away for
-	// (object_type.go, #2137)
+	// (object_type.go, #2179)
 	body, _ = objectTypesBody(to, body)
 	body = kimiLockedSampling(p, to, body)
 	body = clinePin(p, to, body)
