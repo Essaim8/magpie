@@ -3348,6 +3348,10 @@ func (s *Server) forwardOnce(ctx context.Context, p provider.Provider, to provid
 	body = deepseekToolPatterns(p, to, body)
 	body = toolOneOfAsAnyOf(p, to, body)
 	body = kimiToolEnumTypes(p, to, body)
+	// a tool whose parameters declare properties or required but name no
+	// type, which a strict upstream turns the whole request away for
+	// (object_type.go, #2137)
+	body, _ = objectTypesBody(to, body)
 	body = kimiLockedSampling(p, to, body)
 	body = clinePin(p, to, body)
 	body = codexImagesFit(p, to, body)
